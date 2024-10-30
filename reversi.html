@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <title>reversi</title>
     <style type="text/css">
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
         .a{
         background-color:limegreen;
         border: 1px solid black; 
@@ -43,22 +49,25 @@
 </head>
 <body>
     <h1 class="button" style="text-align: center; width: fit-content; background-color: rgb(255, 128, 64); visibility: visible;" onclick="start()">START</h1>
-    <h1 class="button" id="b1" style="position: absolute; top: 400px; background-color: rgb(255, 224, 128); " onclick="respond()">Respond</h1>
-    <h1 class="button" id="b2" style="position: absolute; top: 400px; background-color: rgb(128, 224, 128); " onclick="marking()">Check your answer</h1>
-    <h1 class="button" id="b3" style="position: absolute; top: 400px; background-color: red; " onclick="start()"></h1>
+    <h1 class="button" id="b1" style="position: absolute; top: 500px; background-color: rgb(255, 224, 128); " onclick="respond()">Respond</h1>
+    <h1 class="button" id="b2" style="position: absolute; top: 500px; background-color: rgb(128, 224, 128); " onclick="marking()">Check your answer</h1>
+    <h1 class="button" id="b3" style="position: absolute; top: 500px; background-color: red; " onclick="start()"></h1>
     <h1 class="button" id="b4" style="position: absolute; left: 200px; top: 0px; background-color: silver; "></h1>
 <script>
     let NUMBER = 64;
     var x = new Array(NUMBER);
     var y = new Array(NUMBER);
     var bit = new Array(NUMBER);
+    let state = "waiting";
+    document.write('<div style="background-color: rgb(224, 224, 224); position: relative; width: 400px; height: 400px;">');
 
     for(let j=0; j<64; j++){
         document.write( '<div id="id'+ j +'" class="a" style="position: absolute;"></div>' );
         document.write( '<div id="idk'+ j +'" class="koma" style="position: absolute;" onclick="switch_koma(this)"></div>' );
-        document.write( '<div id="idc'+ j +'" class="c" style="position: absolute; left: '+(85+40*(j%8))+'px; top: '+(97+40*Math.floor(j/8))+'px;"></div>' );
+        document.write( '<div id="idc'+ j +'" class="c" style="position: absolute; left: '+(45+40*(j%8))+'px; top: '+(47+40*Math.floor(j/8))+'px;"></div>' );
     }
-    
+    document.write('</div>');
+
     function switch_koma(id){
         var style = id.style;
         style.backgroundColor = (style.backgroundColor === "black")?"white":"black";
@@ -78,7 +87,7 @@
         y[i] = 40*Math.floor(i/8);
         var idx = document.getElementById('id'+i);
         idx.style.visibility = "visible";
-        Kakudai_masu(0, i, 100+x[i], 100+y[i], 0);
+        Kakudai_masu(0, i, 60+x[i], 50+y[i], 0);
         i++;
         if(i<NUMBER)setTimeout(() => Arrange_masu(i), 10);
         else Arrange_koma(0);
@@ -95,14 +104,14 @@
         var idx = document.getElementById('idk'+i);
         idx.style.visibility = "visible";
         idx.style.backgroundColor = bit[i]?"white":"black";
-        idx.style.left = (85+x[i])+"px";
-        idx.style.top = (15+y[i])+"px";
-        Drop_koma(0, idx, 15+y[i]);
+        idx.style.left = (45+x[i])+"px";
+        idx.style.top = (y[i]-35)+"px";
+        Drop_koma(0, idx, y[i]-35);
         i++;
         if(i<NUMBER)setTimeout(() => Arrange_koma(i), 10);
         else {
             document.getElementById('b1').style.visibility = "visible";
-            timer(0, 300);
+            timer(0, 300, state);
         }
     }
     function Erase_koma(i){
@@ -116,17 +125,18 @@
         var idx = document.getElementById('idk'+i);
         idx.style.visibility = "visible";
         idx.style.backgroundColor = "white";
-        idx.style.left = (85+x[i])+"px";
-        idx.style.top = (85+y[i])+"px";
+        idx.style.left = (45+x[i])+"px";
+        idx.style.top = (35+y[i])+"px";
         i++;
         if(i<NUMBER)setTimeout(() => White_koma(i), 10);
         else {
             document.getElementById('b1').style.visibility = "hidden";
             document.getElementById('b2').style.visibility = "visible";
-            timer(1, 60);
+            timer(1, 60, state);
         }
     }
     function respond(){
+        state = "answering";
         Erase_koma(0);
     }
     function marking(){
@@ -136,19 +146,22 @@
             if((!bit[i] && idx.style.backgroundColor === "black")||(bit[i] && idx.style.backgroundColor === "white"))point++;
             else document.getElementById('idc'+i).style.visibility = "visible";
         }
+        state = "checking";
         document.getElementById('b2').style.visibility = "hidden";
         document.getElementById('b3').style.visibility = "visible";
         document.getElementById('b3').textContent = point +'point';
+        timer(2, 0, state)
     }
-    function timer(i, time){
+    function timer(i, time, former_state){
         console.log("timer");
         document.getElementById('b4').textContent = 'time '+time;
         console.log(time);
-        if(time>0)setTimeout(() => timer(i?1:0, time-1), 1000);
-        else {
-            if(i==0)respond();
-            if(i==1)marking();
-        }
+        console.log(state);
+        console.log(former_state);
+        if(state==former_state && time>0)setTimeout(() => timer(i?1:0, time-1, former_state), 1000);
+        else if(i==0)respond();
+        else if(i==1)marking();
+        
     }
     function start(){
     for(i = 0; i < NUMBER; i++){      
@@ -160,6 +173,7 @@
         var idx = document.getElementById('idc'+i);
         idx.style.visibility = "hidden";
     }
+        state = "watching";console.log("watching");
         document.getElementById('b3').style.visibility = "hidden";
         Arrange_masu(0);
         document.getElementById('b4').style.visibility = "visible";
