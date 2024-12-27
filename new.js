@@ -1,7 +1,6 @@
 import a from './aaa.js'
 console.log(a);
-document.write('<h1>HTML</h1>')
 const output        = document.currentScript;
-const outputTag     = document.createElement('h1');
+const outputTag     = document.createElement('p');
 outputTag.innerHTML = 'HTML';
-output.parentNode.appendChild(outputTag);
+document.currentScript.parentNode.appendChild(outputTag);
