@@ -1,2 +1,2 @@
-let a = 101;
-export default a;
+let abced = 101;
+export default abced;
