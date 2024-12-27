@@ -4,6 +4,6 @@
   "background_color": "#000000",
   "icons": [{
     }],
-  "start_url": "/reversi-memory-game/index.html/",
+  "start_url": "https://hisato-kozuki.github.io/reversi-memory-game/index.html",
   "display": "standalone"
 }
