@@ -1,0 +1,10 @@
+{
+  "name": "reversi memory game",
+  "short_name": "記憶力ゲーム",
+  "background_color": "#000000",
+  "icons": [{
+    }],
+  "start_url": "/index/",
+  "scope": "/index/",
+  "display": "standalone"
+}
