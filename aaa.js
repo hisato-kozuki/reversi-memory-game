@@ -1,1 +1,1 @@
-export let a = 101;
+export default let a = 101;
