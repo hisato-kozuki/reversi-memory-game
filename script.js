@@ -14,13 +14,12 @@ if ('serviceWorker' in navigator) {
   });
 }
 let NUMBER = 64;
-var x = new Array(NUMBER);
-var y = new Array(NUMBER);
-var bit = new Array(NUMBER);
-let state = "waiting";
+    var x = new Array(NUMBER);
+    var y = new Array(NUMBER);
+    var bit = new Array(NUMBER);
+    let state = "waiting";
 
-let bg=document.getElementById('bg');
-bg.write('<div style="background-color: rgb(224, 224, 224); position: relative;"><div style="display:flex;justify-content: center; align-items: center; width: 400px; height: 400px">'
+    document.write('<div style="background-color: rgb(224, 224, 224); position: relative;"><div style="display:flex;justify-content: center; align-items: center; width: 400px; height: 400px">'
         +'<select name="namee" id="time_watch" style="height: 20px;">'
         +'<option value=300>300秒</option><option value=60>60秒</option><option value=120>120秒</option>'
         +'<option value=180>180秒</option><option value=240>240秒</option><option value=360>360秒</option>'
