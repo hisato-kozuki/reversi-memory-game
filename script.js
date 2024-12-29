@@ -22,9 +22,9 @@ let NUMBER = 64;
     document.write('<div style="background-color: rgb(224, 224, 224); position: relative;">'
         +'<div style="display: flex; justify-content: center; position: relative; height: 60px;">'
         +'<h1 class="title" id="title" visibility: visible;">リバーシメモリーゲーム</h1>'
-        +'<h1 class="button" id="b0" style="position: absolute; text-align: center; background-color: rgb(255, 128, 64); visibility: visible;" onclick="start()">START</h1>'
+        +'<h1 class="button" id="b0" style="position: absolute; top: 800px; text-align: center; background-color: rgb(255, 128, 64); visibility: visible;" onclick="start()">START</h1>'
         +'<h1 class="button" id="b4" style="position: absolute; text-align: center; background-color: silver;"></h1>'
-        +'</div><div style="display:flex;justify-content: center; align-items: center; width: 800px; height: 800px; background-image: url("./icon.png")">'
+        +'</div><div style="display:flex; flex-direction: column; justify-content: center; align-items: center; width: 800px; height: 800px; background-image: url("https://github.com/hisato-kozuki/reversi-memory-game/blob/main/icon.png")">'
         +'<select name="namee" id="time_watch" style="height: 40px;">'
         +'<option value=300>300秒</option><option value=60>60秒</option><option value=120>120秒</option>'
         +'<option value=180>180秒</option><option value=240>240秒</option><option value=360>360秒</option>'
@@ -54,7 +54,7 @@ let NUMBER = 64;
         idx.style.width = a+"px";
         idx.style.height = a+"px";
         idx.style.left = x+"px";
-        idx.style.top = y+"px";
+        idx.style.top = 60+y+"px";
         i++;
         if(i<11)setTimeout(() => Kakudai_masu(i, id, x-4, y-4, a+8), 20);
     }
@@ -148,7 +148,6 @@ let NUMBER = 64;
         idx.style.visibility = "hidden";
     }
         state = "watching";console.log("watching");
-        document.getElementById('title').style.visibility = "hidden";
         document.getElementById('b0').style.visibility = "hidden";
         document.getElementById('b3').style.visibility = "hidden";
         document.getElementById('b4').style.visibility = "visible";
