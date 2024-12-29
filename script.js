@@ -39,8 +39,8 @@ let NUMBER = 64;
         document.write( '<div id="idk'+ j +'" class="koma" style="position: absolute;" onclick="switch_koma(this)"></div>' );
         document.write( '<div id="idc'+ j +'" class="c" style="position: absolute; left: '+(90+x[j])+'px; top: '+(114+y[j])+'px;"></div>' );
     }
-    document.write('<div style="position: absolute; top: 700px; display: flex; justify-content: center; width: fit-content;"><h1 class="button" id="b1" style="background-color: rgb(255, 224, 128); " onclick="respond()">Respond</h1>'
-    +'<h1 class="button" id="b2" style="background-color: rgb(128, 224, 128); " onclick="marking()">Check your answer</h1>'
+    document.write('<div style="position: absolute; top: 730px; display: flex; justify-content: center; width: fit-content;"><h1 class="button" id="b1" style="background-color: rgb(255, 224, 128); " onclick="respond()">Respond</h1>'
+    +'<h1 class="button" id="b2" style="background-color: rgb(128, 224, 128); width: 600px;" onclick="marking()">Check your answer</h1>'
     +'<h1 class="button" id="b3" style="background-color: red; " onclick="start()"></h1></div></div></div>');
     function switch_koma(id){
         var style = id.style;
