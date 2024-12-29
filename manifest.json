@@ -3,6 +3,9 @@
   "short_name": "記憶力ゲーム",
   "background_color": "#000000",
   "icons": [{
+      "src": "./icon.png",
+      "sizes": "256x256",
+      "type": "image/png"
     }],
   "start_url": "https://hisato-kozuki.github.io/reversi-memory-game/index.html",
   "display": "standalone"
