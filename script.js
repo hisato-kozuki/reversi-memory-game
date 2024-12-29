@@ -24,7 +24,7 @@ let NUMBER = 64;
         +'<h1 class="title" id="title" visibility: visible;">リバーシ　　  <br>　 メモリー　 <br>　　  　ゲーム</h1>'
         +'<h1 class="button" id="b0" style="position: absolute; top: 600px; text-align: center; background-color: rgb(255, 128, 64); visibility: visible;" onclick="start()">START</h1>'
         +'<h1 class="button" id="b4" style="position: absolute; text-align: center; background-color: silver;"></h1>'
-        +'</div><div style="display:flex; flex-direction: column; justify-content: center; align-items: center; width: 800px; height: 800px; background-image: url(https://hisato-kozuki.github.io/reversi-memory-game/icon.png);">'
+        +'</div><div style="display:flex; flex-direction: column; justify-content: center; align-items: center; width: 800px; height: 800px; background-image: url(./icon.png); background-color:rgba(224,224,224,0.75); background-blend-mode:lighten;">'
         +'<details id="description" style="background-color: white; margin: 20px;"><summary style="font-size: 32px;">このゲームの説明について</summary>'
         +'<li font-size: 12px;>このリバーシ記憶ゲームは、8×8マスに敷き詰められた白と黒の駒の配置を記憶するゲームです。</li>'
         +'<li font-size: 12px;>最初の画面で配置を覚える時間を選択してから、スタートボタンを押せばすぐにゲームが始まります。</li>'
@@ -39,7 +39,7 @@ let NUMBER = 64;
         document.write( '<div id="idk'+ j +'" class="koma" style="position: absolute;" onclick="switch_koma(this)"></div>' );
         document.write( '<div id="idc'+ j +'" class="c" style="position: absolute; left: '+(90+x[j])+'px; top: '+(114+y[j])+'px;"></div>' );
     }
-    document.write('<div style="position: relative; top: 400px; display: flex; justify-content: center; height: 100px"><h1 class="button" id="b1" style="background-color: rgb(255, 224, 128); " onclick="respond()">Respond</h1>'
+    document.write('<div style="position: relative; top: 300px; display: flex; justify-content: center; height: 100px"><h1 class="button" id="b1" style="background-color: rgb(255, 224, 128); " onclick="respond()">Respond</h1>'
     +'<h1 class="button" id="b2" style="background-color: rgb(128, 224, 128); " onclick="marking()">Check your answer</h1>'
     +'<h1 class="button" id="b3" style="background-color: red; " onclick="start()"></h1></div></div></div>');
     function switch_koma(id){
