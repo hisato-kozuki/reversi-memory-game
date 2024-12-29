@@ -21,7 +21,7 @@ let NUMBER = 64;
 
     document.write('<div style="background-color: rgb(224, 224, 224); position: relative;">'
         +'<div style="display: flex; justify-content: center; position: relative; height: 60px;">'
-        +'<h1 class="title" id="title" visibility: visible;">リバーシ　　<br>　メモリー　<br>　　ゲーム</h1>'
+        +'<h1 class="title" id="title" visibility: visible;">リバーシ　　  <br>　 メモリー　 <br>　　  　ゲーム</h1>'
         +'<h1 class="button" id="b0" style="position: absolute; top: 600px; text-align: center; background-color: rgb(255, 128, 64); visibility: visible;" onclick="start()">START</h1>'
         +'<h1 class="button" id="b4" style="position: absolute; text-align: center; background-color: silver;"></h1>'
         +'</div><div style="display:flex; flex-direction: column; justify-content: center; align-items: center; width: 800px; height: 800px;" background="https://hisato-kozuki.github.io/reversi-memory-game/icon.png">'
@@ -29,7 +29,7 @@ let NUMBER = 64;
         +'<li font-size: 12px;>このリバーシ記憶ゲームは、8×8マスに敷き詰められた白と黒の駒の配置を記憶するゲームです。</li>'
         +'<li font-size: 12px;>最初の画面で配置を覚える時間を選択してから、スタートボタンを押せばすぐにゲームが始まります。</li>'
         +'<li font-size: 12px;>配置を覚えた後はrespondボタンを押して回答して、checkyouranswerボタンで答え合わせしてください。</li></details>'
-        +'<select name="namee" id="time_watch" style="width: 120px; height: 60px; font-size: 48px">'
+        +'<select name="namee" id="time_watch" style="width: 120px; height: 60px; font-size: 24px">'
         +'<option value=300>300秒</option><option value=60>60秒</option><option value=120>120秒</option>'
         +'<option value=180>180秒</option><option value=240>240秒</option><option value=360>360秒</option></select>');
     for(let j=0; j<64; j++){
@@ -39,10 +39,10 @@ let NUMBER = 64;
         document.write( '<div id="idk'+ j +'" class="koma" style="position: absolute;" onclick="switch_koma(this)"></div>' );
         document.write( '<div id="idc'+ j +'" class="c" style="position: absolute; left: '+(90+x[j])+'px; top: '+(114+y[j])+'px;"></div>' );
     }
-    document.write('</div></div>');
+    document.write('</div>');
     document.write('<div style="display: flex; justify-content: center;"><h1 class="button" id="b1" style="background-color: rgb(255, 224, 128); " onclick="respond()">Respond</h1>'
     +'<h1 class="button" id="b2" style="background-color: rgb(128, 224, 128); " onclick="marking()">Check your answer</h1>'
-    +'<h1 class="button" id="b3" style="background-color: red; " onclick="start()"></h1></div>');
+    +'<h1 class="button" id="b3" style="background-color: red; " onclick="start()"></h1></div></div>');
     function switch_koma(id){
         var style = id.style;
         style.backgroundColor = (style.backgroundColor === "black")?"white":"black";
