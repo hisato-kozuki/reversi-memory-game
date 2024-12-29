@@ -54,7 +54,7 @@ let NUMBER = 64;
         idx.style.width = a+"px";
         idx.style.height = a+"px";
         idx.style.left = x+"px";
-        idx.style.top = 60+y+"px";
+        idx.style.top = y+"px";
         i++;
         if(i<11)setTimeout(() => Kakudai_masu(i, id, x-4, y-4, a+8), 20);
     }
@@ -148,6 +148,7 @@ let NUMBER = 64;
         idx.style.visibility = "hidden";
     }
         state = "watching";console.log("watching");
+        document.getElementById('title').style.visibility = "hidden";
         document.getElementById('b0').style.visibility = "hidden";
         document.getElementById('b3').style.visibility = "hidden";
         document.getElementById('b4').style.visibility = "visible";
