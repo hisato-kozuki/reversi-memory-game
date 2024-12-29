@@ -21,7 +21,7 @@ let NUMBER = 64;
 
     document.write('<div style="background-color: rgb(224, 224, 224); position: relative;">'
         +'<div style="display: flex; justify-content: center; position: relative;">'
-        +'<h1 class="title" id="title" visibility: visible;">リバーシ　　  <br>　 メモリー　 <br>　　  　ゲーム</h1>'
+        +'<h1 class="title" id="title" visibility: visible;"><span style="text-align: start;">リバーシ</span><br><span style="text-align: center;">メモリー</span><br><span style="text-align: end;">ゲーム</span></h1>'
         +'<h1 class="button" id="b0" style="position: absolute; top: 600px; text-align: center; background-color: rgb(255, 128, 64); visibility: visible;" onclick="start()">START</h1>'
         +'<h1 class="button" id="b4" style="position: absolute; text-align: center; background-color: silver;"></h1>'
         +'</div><div id="bg" style="display:flex; flex-direction: column; justify-content: center; align-items: center; width: 800px; height: 800px; background-image: url(./icon.png); background-color:rgba(224,224,224,0.75); background-blend-mode:lighten;">'
