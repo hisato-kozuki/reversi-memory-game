@@ -26,9 +26,9 @@ let NUMBER = 64;
         +'<h1 class="button" id="b4" style="position: absolute; text-align: center; background-color: silver;"></h1>'
         +'</div><div id="bg" style="display:flex; flex-direction: column; justify-content: center; align-items: center; width: 800px; height: 800px; background-image: url(./icon.png); background-color:rgba(224,224,224,0.75); background-blend-mode:lighten;">'
         +'<details id="description" style="position: relative; top: 30px; background-color: white; margin: 20px;"><summary style="font-size: 32px;">このゲームの説明について</summary>'
-        +'<li font-size: 12px;>このリバーシ記憶ゲームは、8×8マスに敷き詰められた白と黒の駒の配置を記憶するゲームです。</li>'
-        +'<li font-size: 12px;>最初の画面で配置を覚える時間を選択してから、スタートボタンを押せばすぐにゲームが始まります。</li>'
-        +'<li font-size: 12px;>配置を覚えた後はrespondボタンを押して回答して、checkyouranswerボタンで答え合わせしてください。</li></details>'
+        +'<li font-size: 16px;>このリバーシ記憶ゲームは、8×8マスに敷き詰められた白と黒の駒の配置を記憶するゲームです。</li>'
+        +'<li font-size: 16px;>最初の画面で配置を覚える時間を選択してから、スタートボタンを押せばすぐにゲームが始まります。</li>'
+        +'<li font-size: 16px;>配置を覚えた後はrespondボタンを押して回答して、checkyouranswerボタンで答え合わせしてください。</li></details>'
         +'<select name="namee" id="time_watch" style="position: relative; top: 30px; width: 120px; height: 60px; font-size: 24px">'
         +'<option value=300>300秒</option><option value=60>60秒</option><option value=120>120秒</option>'
         +'<option value=180>180秒</option><option value=240>240秒</option><option value=360>360秒</option></select>');
