@@ -34,8 +34,8 @@ let NUMBER = 64;
         +'<li>最初の画面で配置を覚える時間を選択してから、スタートボタンを押せばすぐにゲームが始まります。</li>'
         +'<li>配置を覚えた後はrespondボタンを押して回答して、checkyouranswerボタンで答え合わせしてください。</li></details>');
     for(let j=0; j<64; j++){
-        x[j] = 80*(i%8);
-        y[j] = 80*Math.floor(i/8);
+        x[j] = 80*(j%8);
+        y[j] = 80*Math.floor(j/8);
         document.write( '<div id="id'+ j +'" class="a" style="position: absolute;"></div>' );
         document.write( '<div id="idk'+ j +'" class="koma" style="position: absolute;" onclick="switch_koma(this)"></div>' );
         document.write( '<div id="idc'+ j +'" class="c" style="position: absolute; left: '+(90+x[j])+'px; top: '+(114+y[j])+'px;"></div>' );
