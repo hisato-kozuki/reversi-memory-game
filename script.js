@@ -21,17 +21,24 @@ let NUMBER = 64;
 
     document.write('<div style="background-color: rgb(224, 224, 224); position: relative;">'
         +'<div style="display: flex; justify-content: center; position: relative; height: 60px;">'
+        +'<h1 class="title" id="title" visibility: visible;">リバーシメモリーゲーム</h1>'
         +'<h1 class="button" id="b0" style="position: absolute; text-align: center; background-color: rgb(255, 128, 64); visibility: visible;" onclick="start()">START</h1>'
         +'<h1 class="button" id="b4" style="position: absolute; text-align: center; background-color: silver;"></h1>'
-        +'</div><div style="display:flex;justify-content: center; align-items: center; width: 400px; height: 400px">'
-        +'<select name="namee" id="time_watch" style="height: 20px;">'
+        +'</div><div style="display:flex;justify-content: center; align-items: center; width: 800px; height: 800px; background-image: url("./icon.png")">'
+        +'<select name="namee" id="time_watch" style="height: 40px;">'
         +'<option value=300>300秒</option><option value=60>60秒</option><option value=120>120秒</option>'
         +'<option value=180>180秒</option><option value=240>240秒</option><option value=360>360秒</option>'
-        +'</select>');
+        +'</select>'
+        +'<details id="description" style="margin: 20px;"><summary>このゲームの説明について</summary>'
+        +'<li>このリバーシ記憶ゲームは、8×8マスに敷き詰められた白と黒の駒の配置を記憶するゲームです。</li>'
+        +'<li>最初の画面で配置を覚える時間を選択してから、スタートボタンを押せばすぐにゲームが始まります。</li>'
+        +'<li>配置を覚えた後はrespondボタンを押して回答して、checkyouranswerボタンで答え合わせしてください。</li></details>');
     for(let j=0; j<64; j++){
+        x[i] = 80*(i%8);
+        y[i] = 80*Math.floor(i/8);
         document.write( '<div id="id'+ j +'" class="a" style="position: absolute;"></div>' );
         document.write( '<div id="idk'+ j +'" class="koma" style="position: absolute;" onclick="switch_koma(this)"></div>' );
-        document.write( '<div id="idc'+ j +'" class="c" style="position: absolute; left: '+(45+40*(j%8))+'px; top: '+(57+40*Math.floor(j/8))+'px;"></div>' );
+        document.write( '<div id="idc'+ j +'" class="c" style="position: absolute; left: '+(90+x[j])+'px; top: '+(114+y[j])+'px;"></div>' );
     }
     document.write('</div></div>');
     document.write('<div style="display: flex; justify-content: center;"><h1 class="button" id="b1" style="background-color: rgb(255, 224, 128); " onclick="respond()">Respond</h1>'
@@ -49,33 +56,29 @@ let NUMBER = 64;
         idx.style.left = x+"px";
         idx.style.top = y+"px";
         i++;
-        if(i<11)setTimeout(() => Kakudai_masu(i, id, x-2, y-2, a+4), 20);
+        if(i<11)setTimeout(() => Kakudai_masu(i, id, x-4, y-4, a+8), 20);
     }
     function Arrange_masu(i){
-        x[i] = 40*(i%8);
-        y[i] = 40*Math.floor(i/8);
         var idx = document.getElementById('id'+i);
         idx.style.visibility = "visible";
-        Kakudai_masu(0, i, 60+x[i], 60+y[i], 0);
+        Kakudai_masu(0, i, 120+x[i], 120+y[i], 0);
         i++;
         if(i<NUMBER)setTimeout(() => Arrange_masu(i), 10);
         else Arrange_koma(0);
     }
     function Drop_koma(i, idx, y){
-        idx.style.top = (y+10)+"px";
+        idx.style.top = (y+20)+"px";
         i++;
-        if(i<7)setTimeout(() => Drop_koma(i, idx, y+10), 20);
+        if(i<7)setTimeout(() => Drop_koma(i, idx, y+20), 20);
     }
     function Arrange_koma(i){
         console.log("koma arrange");
-        x[i] = 40*(i%8);
-        y[i] = 40*Math.floor(i/8);
         var idx = document.getElementById('idk'+i);
         idx.style.visibility = "visible";
         idx.style.backgroundColor = bit[i]?"white":"black";
-        idx.style.left = (45+x[i])+"px";
-        idx.style.top = (y[i]-25)+"px";
-        Drop_koma(0, idx, y[i]-25);
+        idx.style.left = (90+x[i])+"px";
+        idx.style.top = (y[i]-50)+"px";
+        Drop_koma(0, idx, y[i]-50);
         i++;
         if(i<NUMBER)setTimeout(() => Arrange_koma(i), 10);
         else {
@@ -94,8 +97,8 @@ let NUMBER = 64;
         var idx = document.getElementById('idk'+i);
         idx.style.visibility = "visible";
         idx.style.backgroundColor = "white";
-        idx.style.left = (45+x[i])+"px";
-        idx.style.top = (45+y[i])+"px";
+        idx.style.left = (90+x[i])+"px";
+        idx.style.top = (90+y[i])+"px";
         i++;
         if(i<NUMBER)setTimeout(() => White_koma(i), 10);
         else {
@@ -145,6 +148,7 @@ let NUMBER = 64;
         idx.style.visibility = "hidden";
     }
         state = "watching";console.log("watching");
+        document.getElementById('title').style.visibility = "hidden";
         document.getElementById('b0').style.visibility = "hidden";
         document.getElementById('b3').style.visibility = "hidden";
         document.getElementById('b4').style.visibility = "visible";
