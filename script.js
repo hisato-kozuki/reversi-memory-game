@@ -19,7 +19,11 @@ let NUMBER = 64;
     var bit = new Array(NUMBER);
     let state = "waiting";
 
-    document.write('<div style="background-color: rgb(224, 224, 224); position: relative;"><div style="display:flex;justify-content: center; align-items: center; width: 400px; height: 400px">'
+    document.write('<div style="background-color: rgb(224, 224, 224); position: relative;">'
+        +'<div style="display: flex; justify-content: center; position: relative; height: 60px;">'
+        +'<h1 class="button" id="b0" style="position: absolute; text-align: center; background-color: rgb(255, 128, 64); visibility: visible;" onclick="start()">START</h1>'
+        +'<h1 class="button" id="b4" style="position: absolute; text-align: center; background-color: silver;"></h1>'
+        +'</div><div style="display:flex;justify-content: center; align-items: center; width: 400px; height: 400px">'
         +'<select name="namee" id="time_watch" style="height: 20px;">'
         +'<option value=300>300秒</option><option value=60>60秒</option><option value=120>120秒</option>'
         +'<option value=180>180秒</option><option value=240>240秒</option><option value=360>360秒</option>'
