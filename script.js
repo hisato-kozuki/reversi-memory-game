@@ -20,7 +20,7 @@ let NUMBER = 64;
     let state = "waiting";
 
     document.write('<div style="background-color: rgb(224, 224, 224); position: relative;">'
-        +'<div style="display: flex; justify-content: center; position: relative; height: 60px;">'
+        +'<div style="display: flex; justify-content: center; position: relative;">'
         +'<h1 class="title" id="title" visibility: visible;">リバーシ　　  <br>　 メモリー　 <br>　　  　ゲーム</h1>'
         +'<h1 class="button" id="b0" style="position: absolute; top: 600px; text-align: center; background-color: rgb(255, 128, 64); visibility: visible;" onclick="start()">START</h1>'
         +'<h1 class="button" id="b4" style="position: absolute; text-align: center; background-color: silver;"></h1>'
@@ -40,7 +40,7 @@ let NUMBER = 64;
         document.write( '<div id="idc'+ j +'" class="c" style="position: absolute; left: '+(90+x[j])+'px; top: '+(114+y[j])+'px;"></div>' );
     }
     document.write('</div>');
-    document.write('<div style="display: flex; justify-content: center;"><h1 class="button" id="b1" style="background-color: rgb(255, 224, 128); " onclick="respond()">Respond</h1>'
+    document.write('<div style="display: flex; justify-content: center; height: 100px"><h1 class="button" id="b1" style="background-color: rgb(255, 224, 128); " onclick="respond()">Respond</h1>'
     +'<h1 class="button" id="b2" style="background-color: rgb(128, 224, 128); " onclick="marking()">Check your answer</h1>'
     +'<h1 class="button" id="b3" style="background-color: red; " onclick="start()"></h1></div></div>');
     function switch_koma(id){
