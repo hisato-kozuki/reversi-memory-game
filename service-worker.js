@@ -1,11 +1,8 @@
 // キャッシュファイルの指定
 var CACHE_NAME = 'pwa-sample-caches';
 var urlsToCache = [
-	'/',
-    '/index.html',
-    '/script.js',
-    '/manifest.json',
-    '/serviceworker.js',
+    '/reversi-memory-game/index.html',
+    '/reversi-memory-game/script.js',
 ];
 
 // インストール処理
