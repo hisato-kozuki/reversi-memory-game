@@ -1,5 +1,5 @@
 // キャッシュファイルの指定
-var CACHE_NAME = 'pwa-sample-caches';
+var CACHE_NAME = 'pwa-reversi-memory-game-caches';
 var urlsToCache = [
     '/reversi-memory-game/index.html',
     '/reversi-memory-game/script.js',
